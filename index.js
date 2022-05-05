@@ -3,6 +3,7 @@ import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
 import usersRoutes from './routes/users.js';
 import reminderRoutes from './routes/reminder.js';
+import authRoutes from './routes/auth.js';
 
 dotenv.config();
 const app = express();
@@ -13,6 +14,7 @@ app.use(bodyParser.json());
 //Routes
 app.use('/users', usersRoutes);
 app.use('/reminder', reminderRoutes);
+app.use('/auth', authRoutes);
 
 
 

@@ -27,9 +27,9 @@ router.post('/', (req, res) => {
             error: "Unknown api key"
         })
         
-    }else(
+    }else{
         res.send(req.body)
-    )
+    }
 });
 
 export default router;

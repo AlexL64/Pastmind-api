@@ -18,9 +18,10 @@ router.post('/', (req, res) => {
         var login = req.body.login;
 
         if(emailValidator.validate(login)){
-            res.send("email");
+            var status = checkIdentity("email", login, password);
+
         }else{
-            res.send("pas email");
+            var status = checkIdentity("username", login, password);
         }
         
     }

@@ -5,14 +5,6 @@ dotenv.config();
 const router = express.Router();
 const KEY = process.env.API_KEY;
 
-const users = [
-    {
-        username: "AlexL64",
-        email: "alex.lucarin@gmail.com",
-        password: "test"
-    }
-];
-
 router.get('/', (req, res) => {
     console.log(users);
     res.send(users);

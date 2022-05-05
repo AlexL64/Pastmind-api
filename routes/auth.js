@@ -1,5 +1,6 @@
 import express from 'express';
 import dotenv from 'dotenv';
+import emailValidator from 'email-validator';
 dotenv.config();
 
 const router = express.Router();
@@ -13,8 +14,15 @@ router.post('/', (req, res) => {
             error: "Unknown api key"
         })
     }else{
-        console.log(req.body.password);
-        res.send(req.body);
+        var password = req.body.password;
+        var login = req.body.login;
+
+        if(emailValidator.validate(login)){
+            res.send("email");
+        }else{
+            res.send("pas email");
+        }
+        
     }
 });
 
